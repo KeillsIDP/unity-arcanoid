@@ -41,6 +41,7 @@ public class BallMovement : MonoBehaviour
 
     private void ChangeDirection(Vector2 direction){
         transform.right = direction;
-        rigidbody.velocity = direction * speed;
+        rigidbody.velocity = Vector2.zero;
+        rigidbody.AddForce(direction.normalized * speed);
     }
 }

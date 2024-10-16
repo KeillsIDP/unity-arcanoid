@@ -1,27 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class BallStartUp : MonoBehaviour
 {
     [SerializeField] 
     private int startForce;
-
-    private Rigidbody2D rigidbody;
-
-    private void Start() {
-        rigidbody = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField]
+    private GameObject ballPrefab;
 
     private void Update() {
         if(!Input.GetMouseButtonDown(0))
             return;
 
-        transform.parent = null;
-        rigidbody.AddForce(Vector2.up*startForce);
-        
-        transform.right = Vector2.up;
-        Destroy(this);
+        GameObject ballInstantiated = Instantiate(ballPrefab,
+                                                    transform.position,
+                                                    Quaternion.identity,
+                                                    transform);
+
+
+        ballInstantiated.transform.parent = null;
+        ballInstantiated.GetComponent<Rigidbody2D>().AddForce(Vector2.up*startForce);
+        ballInstantiated.transform.right = Vector2.up;
+        gameObject.SetActive(false);
     }
 }
