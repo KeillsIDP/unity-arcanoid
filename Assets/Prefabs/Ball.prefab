@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 55fe436d16c60b24f9b07f51ef040dd3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,6 +97,8 @@ GameObject:
   - component: {fileID: 2452398988098842271}
   - component: {fileID: 1200805593289721487}
   - component: {fileID: 8173892916116375356}
+  - component: {fileID: 2459473115313934977}
+  - component: {fileID: -5912099039365628118}
   m_Layer: 3
   m_Name: Ball
   m_TagString: Untagged
@@ -154,7 +156,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.31
 --- !u!50 &2452398988098842271
 Rigidbody2D:
   serializedVersion: 4
@@ -169,9 +171,9 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b9baa2e57db23d54cbd6b4a39ba1ebc6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -207,3 +209,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c49f47caa91042b69573b2c89f754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2459473115313934977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124891733778075109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 170762df665eb4d4580c1db9357dbd10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+--- !u!114 &-5912099039365628118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124891733778075109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24c812a1924146408c51a0f2cee5db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPrefab: {fileID: 6980980422081313550, guid: 544fc8598d27b03498ed67a7f72cb8ab, type: 3}

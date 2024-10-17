@@ -12,7 +12,7 @@ public class BallStartUp : MonoBehaviour
             return;
 
         GameObject ballInstantiated = Instantiate(ballPrefab,
-                                                    transform.position,
+                                                    transform.position+Vector3.up/2,
                                                     Quaternion.identity,
                                                     transform);
 

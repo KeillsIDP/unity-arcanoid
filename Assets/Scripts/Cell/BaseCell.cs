@@ -32,8 +32,12 @@ public class BaseCell : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        health--;
-        if(health==0){
+        BallDamage ballDamage = other.gameObject.GetComponent<BallDamage>();
+        if(!ballDamage)
+            return;
+        
+        health-=ballDamage.GetDamage();
+        if(health<=0){
             score.AddScore(scoreBonus);
             gameObject.SetActive(false);  
             text.gameObject.SetActive(false);    

@@ -10,6 +10,10 @@ public class PlayerHealthManager : MonoBehaviour
     private GameObject ballStartUp;
     [SerializeField]
     private GameObject endScreen;
+    [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private AudioClip deathClip;
 
     private int health = 3;
 
@@ -39,8 +43,13 @@ public class PlayerHealthManager : MonoBehaviour
             break;
         }
 
-        if(health<=0)
+        if(health<=0){
+            musicSource.loop = false;
+            musicSource.clip = deathClip;
+            musicSource.Play();
             endScreen.SetActive(true);
+            Time.timeScale = 0;
+        }
             
         ballStartUp.SetActive(true);
     }
